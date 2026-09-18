@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas>
+	<Texture>resources/sprites/character</Texture>
+	<Regions>
+		<!--Player Characters-->
+		<Region name="white-man" x="179" y="2054" width="22" height="30"/>
+		<Region name="fish-man" x="140" y="2086" width="27" height="30"/>
+
+		<!--Enemy Characters-->
+		
+		<!--Gnomes-->
+		<Region name="gnome-mage" x="62" y="1734" width="30" height="32"/>
+		<Region name="gnome-barbarian" x="31" y="1734" width="31" height="32"/>
+		<Region name="gnome-holy" x="0" y="1734" width="31" height="32"/>
+		<Region name="gnome-priest" x="92" y="1734" width="28" height="32"/>
+	</Regions>
+</TextureAtlas>

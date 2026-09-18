@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas>
+	<Texture>resources/sprites/icons</Texture>
+	<Regions>
+		<!--GUI-->
+		<Region name="cursor" x="1014" y="53" width="10" height="11"/>
+		<Region name="test" x="254" y="0" width="32" height="32"/>
+
+		<Region name="inventory-slot" x="725" y="1316" width="28" height="28"/>
+		<Region name="equip-inventory-slot" x="753" y="1316" width="28" height="28"/>
+	</Regions>
+</TextureAtlas>
