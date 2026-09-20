@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas>
+	<Texture>resources/sprites/character</Texture>
+	<Regions>
+		<!---->
+		<Region name="sword" x="82" y="2294" width="6" height="19"/>
+	</Regions>
+</TextureAtlas>

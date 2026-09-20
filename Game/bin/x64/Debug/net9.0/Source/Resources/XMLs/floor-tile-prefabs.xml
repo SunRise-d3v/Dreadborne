@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas>
+	<Texture>resources/sprites/floor</Texture>
+	<Regions>
+		<!--Dungeon Floor-->
+		<Region name="gray-floor-tile-1" x="576" y="0" width="32" height="32"/>
+		<Region name="gray-floor-tile-2" x="608" y="0" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+		<Region name="gray-floor-tile-3" x="640" y="0" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+		<Region name="gray-floor-tile-4" x="672" y="0" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+		<Region name="gray-floor-tile-5" x="704" y="0" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+		<Region name="gray-floor-tile-6" x="736" y="0" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+		<Region name="gray-floor-tile-7" x="768" y="0" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+		<Region name="gray-floor-tile-8" x="800" y="0" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+		<Region name="gray-floor-tile-9" x="832" y="0" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+
+		<!--Grass Floor-->
+		<Region name="grass-tile-0" x="992" y="384" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+		<Region name="grass-tile-1" x="0" y="416" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+		<Region name="grass-tile-2" x="32" y="416" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+		<Region name="grass-tile-3" x="64" y="416" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+		<Region name="grass-tile-4" x="96" y="416" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+		<Region name="grass-tile-5" x="128" y="416" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+		<Region name="grass-tile-6" x="160" y="416" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+		<Region name="grass-tile-7" x="192" y="416" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+		<Region name="grass-tile-8" x="224" y="416" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+		<Region name="grass-tile-9" x="256" y="416" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+		<Region name="grass-tile-10" x="288" y="416" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+		<Region name="grass-tile-11" x="320" y="416" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+	</Regions>
+</TextureAtlas>

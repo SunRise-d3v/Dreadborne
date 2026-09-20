@@ -1,0 +1,520 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\Dreadborne\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\scripts\\scenes\\gamescene\\gamescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\scripts\\scenes\\gamescene\\gamescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\scripts\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\scripts\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\scripts\\weakattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\scripts\\weakattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\scripts\\player\\handleinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\scripts\\player\\handleinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\scripts\\debug\\debug.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\scripts\\debug\\debug.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\resources\\xmls\\projectile-prefabs.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\resources\\xmls\\projectile-prefabs.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\resources\\xmls\\gui-prefabs.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\resources\\xmls\\gui-prefabs.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\scripts\\canvas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\scripts\\canvas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\resources\\xmls\\ability-texture-prefabs.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\resources\\xmls\\ability-texture-prefabs.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\resources\\sprites\\gui.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\resources\\sprites\\gui.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\resources\\xmls\\character-prefabs.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\resources\\xmls\\character-prefabs.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\scripts\\size.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\scripts\\size.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\scripts\\globalusing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\scripts\\globalusing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\scripts\\world.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\scripts\\world.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\resources\\sprites\\feat.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\resources\\sprites\\feat.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\resources\\sprites\\main.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\resources\\sprites\\main.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\resources\\sprites\\icons.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\resources\\sprites\\icons.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\resources\\xmls\\floor-tile-prefabs.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\resources\\xmls\\floor-tile-prefabs.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\scripts\\graphics\\auxiliary\\textureatlas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\scripts\\graphics\\auxiliary\\textureatlas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\scripts\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\scripts\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\scripts\\utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\scripts\\utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\source\\resources\\sprites\\floor.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:source\\resources\\sprites\\floor.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\dreadborne.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:dreadborne.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|c:\\users\\user\\source\\repos\\dreadborne\\dreadborne.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{575F93DE-F184-45EA-A186-0828F20FBBC5}|Dreadborne.csproj|solutionrelative:dreadborne.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\.nuget\\packages\\monogame.content.builder.task\\3.8.5.1\\build\\MonoGame.Content.Builder.Task.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 27,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:7:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:5:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6d4078d1-5951-4ed1-ac0e-0a8099c1cce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Projectile.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Projectile.cs",
+              "RelativeDocumentMoniker": "Source\\Scripts\\Projectile.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Projectile.cs",
+              "RelativeToolTip": "Source\\Scripts\\Projectile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAATAAAAAAAAAA==",
+              "Icon": "48a660cc-90f9-4a0e-ada8-3fac242f5f2d.000101|",
+              "WhenOpened": "2026-09-20T20:12:09.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "gui-prefabs.xml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\XMLs\\gui-prefabs.xml",
+              "RelativeDocumentMoniker": "Source\\Resources\\XMLs\\gui-prefabs.xml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\XMLs\\gui-prefabs.xml",
+              "RelativeToolTip": "Source\\Resources\\XMLs\\gui-prefabs.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-09-20T19:59:12.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "projectile-prefabs.xml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\XMLs\\projectile-prefabs.xml",
+              "RelativeDocumentMoniker": "Source\\Resources\\XMLs\\projectile-prefabs.xml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\XMLs\\projectile-prefabs.xml",
+              "RelativeToolTip": "Source\\Resources\\XMLs\\projectile-prefabs.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-09-20T19:59:11.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WeakAttack.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\WeakAttack.cs",
+              "RelativeDocumentMoniker": "Source\\Scripts\\WeakAttack.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\WeakAttack.cs",
+              "RelativeToolTip": "Source\\Scripts\\WeakAttack.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAKAAAAAAAAAA==",
+              "Icon": "48a660cc-90f9-4a0e-ada8-3fac242f5f2d.000101|",
+              "WhenOpened": "2026-09-20T19:54:50.281Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ability-texture-prefabs.xml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\XMLs\\ability-texture-prefabs.xml",
+              "RelativeDocumentMoniker": "Source\\Resources\\XMLs\\ability-texture-prefabs.xml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\XMLs\\ability-texture-prefabs.xml",
+              "RelativeToolTip": "Source\\Resources\\XMLs\\ability-texture-prefabs.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-09-20T19:17:50.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Debug.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Debug\\Debug.cs",
+              "RelativeDocumentMoniker": "Source\\Scripts\\Debug\\Debug.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Debug\\Debug.cs",
+              "RelativeToolTip": "Source\\Scripts\\Debug\\Debug.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "Icon": "48a660cc-90f9-4a0e-ada8-3fac242f5f2d.000101|",
+              "WhenOpened": "2026-09-20T19:01:29.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Canvas.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Canvas.cs",
+              "RelativeDocumentMoniker": "Source\\Scripts\\Canvas.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Canvas.cs",
+              "RelativeToolTip": "Source\\Scripts\\Canvas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAmAAAAAAAAAA==",
+              "Icon": "48a660cc-90f9-4a0e-ada8-3fac242f5f2d.000101|",
+              "WhenOpened": "2026-09-20T19:01:12.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "main.png",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\Sprites\\main.png",
+              "RelativeDocumentMoniker": "Source\\Resources\\Sprites\\main.png",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\Sprites\\main.png",
+              "RelativeToolTip": "Source\\Resources\\Sprites\\main.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-09-20T18:57:33.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "feat.png",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\Sprites\\feat.png",
+              "RelativeDocumentMoniker": "Source\\Resources\\Sprites\\feat.png",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\Sprites\\feat.png",
+              "RelativeToolTip": "Source\\Resources\\Sprites\\feat.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-09-20T18:57:20.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "icons.png",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\Sprites\\icons.png",
+              "RelativeDocumentMoniker": "Source\\Resources\\Sprites\\icons.png",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\Sprites\\icons.png",
+              "RelativeToolTip": "Source\\Resources\\Sprites\\icons.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-09-20T18:56:55.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "gui.png",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\Sprites\\gui.png",
+              "RelativeDocumentMoniker": "Source\\Resources\\Sprites\\gui.png",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\Sprites\\gui.png",
+              "RelativeToolTip": "Source\\Resources\\Sprites\\gui.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-09-20T18:56:48.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Game.cs",
+              "RelativeDocumentMoniker": "Game.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Game.cs",
+              "RelativeToolTip": "Game.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
+              "Icon": "48a660cc-90f9-4a0e-ada8-3fac242f5f2d.000101|",
+              "WhenOpened": "2026-09-20T18:26:02.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "GlobalUsing.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\GlobalUsing.cs",
+              "RelativeDocumentMoniker": "Source\\Scripts\\GlobalUsing.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\GlobalUsing.cs",
+              "RelativeToolTip": "Source\\Scripts\\GlobalUsing.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "48a660cc-90f9-4a0e-ada8-3fac242f5f2d.000101|",
+              "WhenOpened": "2026-09-20T18:25:05.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "TextureAtlas.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Graphics\\Auxiliary\\TextureAtlas.cs",
+              "RelativeDocumentMoniker": "Source\\Scripts\\Graphics\\Auxiliary\\TextureAtlas.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Graphics\\Auxiliary\\TextureAtlas.cs",
+              "RelativeToolTip": "Source\\Scripts\\Graphics\\Auxiliary\\TextureAtlas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAIAAAAAAAAAA==",
+              "Icon": "48a660cc-90f9-4a0e-ada8-3fac242f5f2d.000101|",
+              "WhenOpened": "2026-09-20T16:47:14.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "character-prefabs.xml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\XMLs\\character-prefabs.xml",
+              "RelativeDocumentMoniker": "Source\\Resources\\XMLs\\character-prefabs.xml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\XMLs\\character-prefabs.xml",
+              "RelativeToolTip": "Source\\Resources\\XMLs\\character-prefabs.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-09-20T16:46:59.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "floor.png",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\Sprites\\floor.png",
+              "RelativeDocumentMoniker": "Source\\Resources\\Sprites\\floor.png",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\Sprites\\floor.png",
+              "RelativeToolTip": "Source\\Resources\\Sprites\\floor.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-09-20T08:30:12.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Dreadborne",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Dreadborne.csproj",
+              "RelativeDocumentMoniker": "Dreadborne.csproj",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Dreadborne.csproj",
+              "RelativeToolTip": "Dreadborne.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-09-20T08:26:10.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Dreadborne",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Dreadborne.csproj",
+              "RelativeDocumentMoniker": "Dreadborne.csproj",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Dreadborne.csproj",
+              "RelativeToolTip": "Dreadborne.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-09-20T08:26:00.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "MonoGame.Content.Builder.Task.targets",
+              "DocumentMoniker": "C:\\Users\\User\\.nuget\\packages\\monogame.content.builder.task\\3.8.5.1\\build\\MonoGame.Content.Builder.Task.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\.nuget\\packages\\monogame.content.builder.task\\3.8.5.1\\build\\MonoGame.Content.Builder.Task.targets",
+              "ToolTip": "C:\\Users\\User\\.nuget\\packages\\monogame.content.builder.task\\3.8.5.1\\build\\MonoGame.Content.Builder.Task.targets",
+              "RelativeToolTip": "..\\..\\..\\.nuget\\packages\\monogame.content.builder.task\\3.8.5.1\\build\\MonoGame.Content.Builder.Task.targets",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAhwKsAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-09-20T08:21:17.171Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameScene.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Scenes\\GameScene\\GameScene.cs",
+              "RelativeDocumentMoniker": "Source\\Scripts\\Scenes\\GameScene\\GameScene.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Scenes\\GameScene\\GameScene.cs",
+              "RelativeToolTip": "Source\\Scripts\\Scenes\\GameScene\\GameScene.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "48a660cc-90f9-4a0e-ada8-3fac242f5f2d.000101|",
+              "WhenOpened": "2026-09-20T08:20:28.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Utility.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Utility.cs",
+              "RelativeDocumentMoniker": "Source\\Scripts\\Utility.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Utility.cs",
+              "RelativeToolTip": "Source\\Scripts\\Utility.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "48a660cc-90f9-4a0e-ada8-3fac242f5f2d.000101|",
+              "WhenOpened": "2026-09-20T08:19:27.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "floor-tile-prefabs.xml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\XMLs\\floor-tile-prefabs.xml",
+              "RelativeDocumentMoniker": "Source\\Resources\\XMLs\\floor-tile-prefabs.xml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Resources\\XMLs\\floor-tile-prefabs.xml",
+              "RelativeToolTip": "Source\\Resources\\XMLs\\floor-tile-prefabs.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-09-20T08:18:45.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Tile.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Tile.cs",
+              "RelativeDocumentMoniker": "Source\\Scripts\\Tile.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Tile.cs",
+              "RelativeToolTip": "Source\\Scripts\\Tile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "48a660cc-90f9-4a0e-ada8-3fac242f5f2d.000101|",
+              "WhenOpened": "2026-09-20T08:09:49.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "World.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\World.cs",
+              "RelativeDocumentMoniker": "Source\\Scripts\\World.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\World.cs",
+              "RelativeToolTip": "Source\\Scripts\\World.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAA6AAAAAAAAAA==",
+              "Icon": "48a660cc-90f9-4a0e-ada8-3fac242f5f2d.000101|",
+              "WhenOpened": "2026-09-20T08:07:02.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Size.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Size.cs",
+              "RelativeDocumentMoniker": "Source\\Scripts\\Size.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Size.cs",
+              "RelativeToolTip": "Source\\Scripts\\Size.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "48a660cc-90f9-4a0e-ada8-3fac242f5f2d.000101|",
+              "WhenOpened": "2026-09-19T08:37:52.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Player\\Player.cs",
+              "RelativeDocumentMoniker": "Source\\Scripts\\Player\\Player.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Player\\Player.cs",
+              "RelativeToolTip": "Source\\Scripts\\Player\\Player.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAKAAAAAAAAAA==",
+              "Icon": "48a660cc-90f9-4a0e-ada8-3fac242f5f2d.000101|",
+              "WhenOpened": "2026-09-19T08:23:25.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "PlayerMovement.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Player\\PlayerMovement.cs",
+              "RelativeDocumentMoniker": "Source\\Scripts\\Player\\PlayerMovement.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Player\\PlayerMovement.cs",
+              "RelativeToolTip": "Source\\Scripts\\Player\\PlayerMovement.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAWwCAAAABcAAAAAAAAAA==",
+              "Icon": "48a660cc-90f9-4a0e-ada8-3fac242f5f2d.000101|",
+              "WhenOpened": "2026-09-19T08:23:23.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HandleInput.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Player\\HandleInput.cs",
+              "RelativeDocumentMoniker": "Source\\Scripts\\Player\\HandleInput.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Dreadborne\\Source\\Scripts\\Player\\HandleInput.cs",
+              "RelativeToolTip": "Source\\Scripts\\Player\\HandleInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "48a660cc-90f9-4a0e-ada8-3fac242f5f2d.000101|",
+              "WhenOpened": "2026-09-19T08:23:19.536Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
