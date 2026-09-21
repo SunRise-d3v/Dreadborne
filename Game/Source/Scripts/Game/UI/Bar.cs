@@ -1,13 +1,13 @@
 ﻿namespace Dreadborne.UI;
 
-internal sealed class HealthBar
+internal sealed class Bar
 {
     private readonly Texture2D _pixel;
 
     private Vector2 _position;
     private Rectangle _bar;
 
-    public HealthBar(Vector2 position, int width, int height)
+    public Bar(Vector2 position, int width, int height)
     {
         _pixel = new Texture2D(Core.GraphicsDevice, 1, 1);
         _pixel.SetData([Color.White]);

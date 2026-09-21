@@ -41,3 +41,6 @@ C:\Users\User\source\repos\Dreadborne\bin\x64\Debug\net9.0\Source\Resources\Spri
 C:\Users\User\source\repos\Dreadborne\bin\x64\Debug\net9.0\Source\Resources\XMLs\floor-tile-prefabs.xml
 C:\Users\User\source\repos\Dreadborne\bin\x64\Debug\net9.0\Source\Resources\XMLs\ability-texture-prefabs.xml
 C:\Users\User\source\repos\Dreadborne\bin\x64\Debug\net9.0\Source\Resources\XMLs\projectile-prefabs.xml
+C:\Users\User\source\repos\Dreadborne\bin\x64\Debug\net9.0\Source\Resources\Fonts\DejaVuSansMono.spritefont
+C:\Users\User\source\repos\Dreadborne\bin\x64\Debug\net9.0\Source\Resources\Fonts\Default.spritefont
+C:\Users\User\source\repos\Dreadborne\bin\x64\Debug\net9.0\Source\Resources\Fonts\Default.xnb

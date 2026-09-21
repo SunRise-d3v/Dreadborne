@@ -4,6 +4,9 @@ namespace Dreadborne.Entity;
 
 internal sealed class Player
 {
+    private static Player p_instance;
+    public static Player Instance => p_instance;
+
     private readonly TextureRegion _texture;
 
     private readonly PlayerMovement _movement;
@@ -16,17 +19,23 @@ internal sealed class Player
 
     private Rectangle _hitbox, _collider;
 
-    private readonly HealthBar _healthBar;
-    public HealthBar HealthBar => _healthBar;
+    private readonly Bar _healthBar;
+    private readonly Bar _manaBar;
+    public Bar HealthBar => _healthBar;
+    public Bar ManaBar => _manaBar;
 
     public Player(string pathFile, string field)
     {
+        p_instance = this;
+
         TextureAtlas atlas = TextureAtlas.FromFile(Game.Content, pathFile);
         this._texture = atlas.GetRegion(field);
 
         _movement = new();
         //_attack = new();
-        _healthBar = new(new(Game.SCREEN_WIDTH / 2 - 1, Game.SCREEN_HEIGHT - 16), 300, 20);
+
+        _healthBar = new(new(Game.SCREEN_WIDTH / 2 - 1, Game.SCREEN_HEIGHT - 18 * 2), 300, 20);
+        _manaBar = new(new(Game.SCREEN_WIDTH / 2 - 1, Game.SCREEN_HEIGHT - 16), 300, 20);
     }
 
     public void Update(GameTime gameTime)

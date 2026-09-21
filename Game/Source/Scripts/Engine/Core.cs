@@ -4,7 +4,7 @@ namespace Dreadborne;
 
 public class Core : Microsoft.Xna.Framework.Game
 {
-    internal static Core s_instance;
+    private static Core s_instance;
 
     public static Core Instance => s_instance;
 

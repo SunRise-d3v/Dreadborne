@@ -14,13 +14,17 @@ internal sealed class Canvas
     private Vector2 Pivot => new Vector2(_gameHUDRectangle.Width, _gameHUDRectangle.Height) * 0.5f;
     #endregion
 
-    private const byte MAX_ABILITY = 1;
+    public static SpriteFont Font;
+    public static SpriteFont DefaultFont;
+
+    private const byte MAX_ABILITY = 4;
     private readonly TextureRegion[] _abilities;
 
-    private Player _player;
-
-    public Canvas(GraphicsDevice graphicsDevice, Player player)
+    public Canvas(GraphicsDevice graphicsDevice)
     {
+        // Font = Game.Content.Load<SpriteFont>("Resources/Fonts/DejaVuSansMono");
+        DefaultFont = Game.Content.Load<SpriteFont>("Resources/Fonts/Default");
+
         _pixel = new(graphicsDevice, 1, 1);
         _pixel.SetData([Color.White]);
 
@@ -35,19 +39,22 @@ internal sealed class Canvas
         _abilities = new TextureRegion[MAX_ABILITY];
         for (int index = 0; index < MAX_ABILITY; index++)
             _abilities[index] = atlas.GetRegion("poisoned-arrow");
-
-        this._player = player;
     }
 
     public void Draw(SpriteBatch spriteBatch, Layer layer)
     {
         spriteBatch.Draw(_pixel, _gameHUDRectangle, _gameHUDRectangle, Color.Black * 0.5f, 0f, Pivot, SpriteEffects.None, layer.Depth);
 
+        byte i = 0;
+        byte keys = 1;
+
         foreach (TextureRegion ability in _abilities)
         {
-            ability.Draw(spriteBatch, new(Game.SCREEN_WIDTH / 2, Game.SCREEN_HEIGHT - (_rectangleHeight / 2)), Color.White, 0f, Vector2.One, SpriteEffects.None, layer.Depth);
+            ability?.Draw(spriteBatch, new((_rectangleHeight + 150) + Tile.TILE_SIZE * i, Game.SCREEN_HEIGHT - (_rectangleHeight / 2)), Color.White, 0f, Vector2.One, SpriteEffects.None, layer.Depth);
+            spriteBatch.DrawString(DefaultFont, keys++.ToString(), new((_rectangleHeight + 135) + Tile.TILE_SIZE * i++, Game.SCREEN_HEIGHT - (_rectangleHeight / 2) - Tile.TILE_SIZE / 2), Color.White, 0f, Vector2.Zero, 0.8f, SpriteEffects.None, layer.Depth + 0.01f);
         }
 
-        _player.HealthBar.Draw(spriteBatch, Layer.GUILayer, 14, 20, Color.Red, Color.Green);
+        Player.Instance.ManaBar.Draw(spriteBatch, Layer.GUILayer, 3, 5, Color.Gray, Color.Blue);
+        Player.Instance.HealthBar.Draw(spriteBatch, Layer.GUILayer, 14, 20, Color.Red, Color.Green);
     }
 }

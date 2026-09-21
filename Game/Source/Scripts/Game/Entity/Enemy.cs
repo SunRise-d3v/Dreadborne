@@ -4,7 +4,7 @@ namespace Dreadborne.Entity;
 
 internal class Enemy
 {
-    private readonly TextureRegion _texture;
+    private TextureRegion _texture;
     private Vector2 _position;
 
     private Rectangle _hitbox, _collider;
@@ -45,14 +45,15 @@ internal class Enemy
         }
         else
         {
-            Destroy();
+            Destroy(this);
             return 0;
         }
     }
 
-    private void Destroy()
+    public static void Destroy(Enemy enemy)
     {
-        _hitbox = Rectangle.Empty;
-        _isAlive = false;
+        enemy._texture = null;
+        enemy._hitbox = Rectangle.Empty;
+        enemy._isAlive = false;
     }
 }

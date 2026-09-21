@@ -31,7 +31,7 @@ internal sealed class GameScene : IScene
     {
         _player.Movement.SetPosition(new(_world.Width / 2, _world.Height / 2));
 
-        _canvas = new(Game.GraphicsDevice, _player);
+        _canvas = new(Game.GraphicsDevice);
     }
 
     public void Update(GameTime gameTime)
