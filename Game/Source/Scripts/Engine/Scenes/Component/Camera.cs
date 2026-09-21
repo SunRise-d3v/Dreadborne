@@ -25,4 +25,7 @@ public sealed class Camera(Viewport viewport)
     {
         this.Zoom = addZoom;
     }
+
+    public Vector2 ScreenToWorld(Vector2 screenPosition)
+    => Vector2.Transform(screenPosition, Matrix.Invert(Transform));
 }

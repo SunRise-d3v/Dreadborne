@@ -39,3 +39,5 @@ C:\Users\User\source\repos\Dreadborne\bin\x64\Release\net9.0\Source\Resources\Sp
 C:\Users\User\source\repos\Dreadborne\bin\x64\Release\net9.0\Source\Resources\XMLs\floor-tile-prefabs.xml
 C:\Users\User\source\repos\Dreadborne\bin\x64\Release\net9.0\Source\Resources\XMLs\gui-prefabs
 C:\Users\User\source\repos\Dreadborne\bin\x64\Release\net9.0\Source\Resources\XMLs\gui-prefabs.xml
+C:\Users\User\source\repos\Dreadborne\bin\x64\Release\net9.0\Source\Resources\XMLs\ability-texture-prefabs.xml
+C:\Users\User\source\repos\Dreadborne\bin\x64\Release\net9.0\Source\Resources\XMLs\projectile-prefabs.xml

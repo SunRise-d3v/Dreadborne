@@ -14,6 +14,7 @@ internal sealed class PlayerMovement
     {
         _moveSpeed = 7f;
         _moveSpeedMultiplier = 20;
+        _moveSpeedMultiplier = 100;
     }
 
     public void Update(GameTime gameTime)

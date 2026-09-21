@@ -14,6 +14,7 @@
 		<Region name="gray-floor-tile-9" x="832" y="0" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
 
 		<!--Grass Floor-->
+		<Region name="grass-tile-0" x="992" y="384" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
 		<Region name="grass-tile-1" x="0" y="416" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
 		<Region name="grass-tile-2" x="32" y="416" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
 		<Region name="grass-tile-3" x="64" y="416" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
