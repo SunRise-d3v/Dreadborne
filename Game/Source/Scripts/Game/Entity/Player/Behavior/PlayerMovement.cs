@@ -5,7 +5,7 @@ internal sealed class PlayerMovement
     private Vector2 _position;
     public Vector2 Position => _position;
 
-    private Vector2 _direction;
+    internal Vector2 _direction;
 
     private float _moveSpeed;
     private int _moveSpeedMultiplier;
@@ -22,7 +22,7 @@ internal sealed class PlayerMovement
         float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
         _direction = Vector2.Zero;
 
-        HandleInput.Update(ref _direction);
+        HandleInput.MoveUpdate();
 
         if (_direction != Vector2.Zero)
         {

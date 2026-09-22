@@ -36,14 +36,21 @@ public sealed class Mouse
     public int ScrollWheel => CurrentState.ScrollWheelValue;
     public int ScrollWheelDelta => CurrentState.ScrollWheelValue - PreviousState.ScrollWheelValue;
 
+    public Rectangle Bounds { get; private set; }
+    private const byte OFFSET = 1;
+
     public Mouse()
     {
+        Bounds = new(Position.X, Position.Y, 8, 8);
+
         PreviousState = new();
         CurrentState = GetState();
     }
 
     public void Update()
     {
+        Bounds = new(Position.X - OFFSET, Position.Y - OFFSET, 8, 8);
+
         PreviousState = CurrentState;
         CurrentState = GetState();
     }
@@ -57,6 +64,7 @@ public sealed class Mouse
             MouseButton.Right => CurrentState.RightButton == ButtonState.Pressed,
             MouseButton.XButton1 => CurrentState.XButton1 == ButtonState.Pressed,
             MouseButton.XButton2 => CurrentState.XButton2 == ButtonState.Pressed,
+
             _ => false,
         };
     }
@@ -70,6 +78,7 @@ public sealed class Mouse
             MouseButton.Right => CurrentState.RightButton == ButtonState.Released,
             MouseButton.XButton1 => CurrentState.XButton1 == ButtonState.Released,
             MouseButton.XButton2 => CurrentState.XButton2 == ButtonState.Released,
+
             _ => false,
         };
     }
@@ -83,6 +92,7 @@ public sealed class Mouse
             MouseButton.Right => CurrentState.RightButton == ButtonState.Pressed && PreviousState.RightButton == ButtonState.Released,
             MouseButton.XButton1 => CurrentState.XButton1 == ButtonState.Pressed && PreviousState.XButton1 == ButtonState.Released,
             MouseButton.XButton2 => CurrentState.XButton2 == ButtonState.Pressed && PreviousState.XButton2 == ButtonState.Released,
+
             _ => false,
         };
     }
@@ -96,6 +106,7 @@ public sealed class Mouse
             MouseButton.Right => CurrentState.RightButton == ButtonState.Released && PreviousState.RightButton == ButtonState.Pressed,
             MouseButton.XButton1 => CurrentState.XButton1 == ButtonState.Released && PreviousState.XButton1 == ButtonState.Pressed,
             MouseButton.XButton2 => CurrentState.XButton2 == ButtonState.Released && PreviousState.XButton2 == ButtonState.Pressed,
+
             _ => false,
         };
     }

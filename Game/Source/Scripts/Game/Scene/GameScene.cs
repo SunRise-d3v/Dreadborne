@@ -1,4 +1,6 @@
-﻿namespace Dreadborne.Scene;
+﻿using Debug = Dreadborne.DeveloperTools.Debug;
+
+namespace Dreadborne.Scene;
 
 internal sealed class GameScene : IScene
 {
@@ -18,7 +20,7 @@ internal sealed class GameScene : IScene
         _world = new(125, 125);
 
         _player = new(Utility.UploadXML("character-prefabs"), "white-man");
-        
+
         _enemy1 = new(Utility.UploadXML("character-prefabs"), "gnome-mage", new(100, 100));
         _enemy2 = new(Utility.UploadXML("character-prefabs"), "gnome-mage", new(200, 100));
 
@@ -32,6 +34,8 @@ internal sealed class GameScene : IScene
         _player.Movement.SetPosition(new(_world.Width / 2, _world.Height / 2));
 
         _canvas = new(Game.GraphicsDevice);
+
+        DebugConsole.Log($"Scene: \'Game\' loaded", ConsoleColor.White, ConsoleColor.Green); 
     }
 
     public void Update(GameTime gameTime)
@@ -57,5 +61,7 @@ internal sealed class GameScene : IScene
     public void DrawGUI(SpriteBatch spriteBatch)
     {
         _canvas.Draw(spriteBatch, Layer.GUILayer);
+        Player.Instance.Inventory.Draw(spriteBatch);
+        Debug.DrawRectangleBorder(spriteBatch, Input.Mouse.Bounds, Color.Pink, 1);
     }
 }

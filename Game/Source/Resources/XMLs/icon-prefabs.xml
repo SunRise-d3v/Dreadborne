@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas>
+	<Texture>resources/sprites/icons</Texture>
+	<Regions>
+		<!--Cursor-->
+		<Region name="cursor" x="1014" y="53" width="10" height="11"/>
+	</Regions>
+</TextureAtlas>

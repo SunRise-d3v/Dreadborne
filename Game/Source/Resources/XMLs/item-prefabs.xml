@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas>
+	<Texture>resources/sprites/main</Texture>
+	<Regions>
+		<!--Item-->
+		<Region name="iron-shortsword" x="281" y="160" width="17" height="17"/>
+		<Region name="axe" x="584" y="192" width="Tile.TILE_SIZE" height="Tile.TILE_SIZE"/>
+		<Region name="boots" x="292" y="32" width="30" height="31"/>
+		<Region name="red-boots-icon" x="720" y="32" width="32" height="24"/>
+	</Regions>
+</TextureAtlas>

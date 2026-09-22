@@ -1,2 +1,3 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/User/source/repos/Dreadborne/Source/Resources/Fonts/Default.spritefont","C:/Users/User/source/repos/Dreadborne/Source/bin/DesktopVK/Resources/Fonts/Default.xnb","FontDescriptionProcessor","SpriteFontContent",2069,1053721,0,2538063
+"C:/Users/User/source/repos/Dreadborne/Source/Resources/XMLs/icon-prefabs.xml","C:\Users\User\source\repos\Dreadborne\Source\bin\DesktopVK\Resources/XMLs/icon-prefabs.xml","CopyItem","File",227,227,0,0019804
+"C:/Users/User/source/repos/Dreadborne/Source/Resources/XMLs/item-prefabs.xml","C:\Users\User\source\repos\Dreadborne\Source\bin\DesktopVK\Resources/XMLs/item-prefabs.xml","CopyItem","File",460,460,0,0008629

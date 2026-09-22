@@ -8,6 +8,12 @@ public static class Debug
 
     public static bool IsOpen;
 
+    public static readonly Color StaticObject = Color.Blue;
+    public static readonly Color DynamicObject = Color.Red;
+    public static readonly Color Collider = Color.White;
+    public static readonly Color InteractionObject = Color.LawnGreen;
+    //public static readonly Color DynamicObject = Color.Red;
+
     [Conditional("DEBUG")]
     public static void Init(GraphicsDevice graphicsDevice)
     {

@@ -127,6 +127,12 @@
 #begin Resources/XMLs/gui-prefabs.xml
 /copy:Resources/XMLs/gui-prefabs.xml
 
+#begin Resources/XMLs/icon-prefabs.xml
+/copy:Resources/XMLs/icon-prefabs.xml
+
+#begin Resources/XMLs/item-prefabs.xml
+/copy:Resources/XMLs/item-prefabs.xml
+
 #begin Resources/XMLs/projectile-prefabs.xml
 /copy:Resources/XMLs/projectile-prefabs.xml
 

@@ -21,7 +21,8 @@ public class Core : Microsoft.Xna.Framework.Game
     public Cursor Cursor { get; private set; }
 
     private readonly FPSCounter _fpsCounter;
-    private string _title;
+    private readonly string _title;
+    private readonly int _width, _height;
 
     public Core(string title, int width, int height, bool fullScreen, bool fixedStep = true, bool vSync = true)
     {
@@ -31,7 +32,11 @@ public class Core : Microsoft.Xna.Framework.Game
         s_instance = this;
 
         _title = title;
-        CreateWindow(width, height, fullScreen);
+
+        _width = width;
+        _height = height;
+
+        CreateWindow(_width, _height, fullScreen);
 
         Content = base.Content;
 
@@ -52,15 +57,17 @@ public class Core : Microsoft.Xna.Framework.Game
         SpriteBatch = new SpriteBatch(GraphicsDevice);
 
         PreInitialize();
+
         base.Initialize();
+
         LateInitialize();
     }
 
     protected virtual void PreInitialize()
-    { 
+    {
         IsMouseVisible = false;
         //IsMouseVisible = true;
-        Cursor = new(Utility.UploadXML("gui-prefabs"), "cursor");
+        Cursor = new(Utility.UploadXML("icon-prefabs"), "cursor");
     }
 
     protected virtual void LateInitialize()
@@ -106,7 +113,7 @@ public class Core : Microsoft.Xna.Framework.Game
     protected virtual void DrawGame(GameTime gameTime)
     {
 #if DEBUG
-        Window.Title = _title + " : " + _fpsCounter.FPS.ToString();
+        Window.Title = $"Title: [{_title}] | Resolution: [{_width}x{_height}] | FPS: [{_fpsCounter.FPS}]";
 #endif
     }
 
