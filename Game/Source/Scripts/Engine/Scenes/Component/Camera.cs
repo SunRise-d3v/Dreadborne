@@ -8,7 +8,8 @@ public sealed class Camera(Viewport viewport)
     public Vector2 Position => _position;
 
     public float Zoom { get; private set; } = 1f;
-    public float Rotation { get; } = 0f;
+    public float Rotation { get; private set; } = 0f;
+    public float SpriteRotate => -Rotation;
 
     public Matrix Transform =>
         Matrix.CreateTranslation(new Vector3(-_position, 0f)) *
@@ -26,6 +27,11 @@ public sealed class Camera(Viewport viewport)
         this.Zoom = addZoom;
     }
 
+    public void Rotate(float degrees)
+    {
+        Rotation += degrees;
+    }
+
     public Vector2 ScreenToWorld(Vector2 screenPosition)
-    => Vector2.Transform(screenPosition, Matrix.Invert(Transform));
+        => Vector2.Transform(screenPosition, Matrix.Invert(Transform));
 }

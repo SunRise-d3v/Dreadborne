@@ -13,22 +13,33 @@ internal sealed class PlayerMovement
     public PlayerMovement()
     {
         _moveSpeed = 7f;
-        _moveSpeedMultiplier = 20;
-        _moveSpeedMultiplier = 100;
+        _moveSpeedMultiplier = 200;
+        //_moveSpeedMultiplier = 100;
     }
 
     public void Update(GameTime gameTime)
     {
         float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-        _direction = Vector2.Zero;
 
-        HandleInput.MoveUpdate();
+        Vector2 inputDirection = HandleInput.GetMoveInput();
 
-        if (_direction != Vector2.Zero)
+        if (inputDirection != Vector2.Zero)
         {
-            _direction.Normalize();
-            _position += _direction * Move(_moveSpeed, deltaTime, _moveSpeedMultiplier);
+            inputDirection.Normalize();
+
+            Vector2 worldDirection = RotateVector(inputDirection, MainCamera.SpriteRotate);
+            _position += worldDirection * Move(_moveSpeed, deltaTime, _moveSpeedMultiplier);
         }
+    }
+
+    private static Vector2 RotateVector(Vector2 vector, float radians)
+    {
+        float cos = MathF.Cos(radians);
+        float sin = MathF.Sin(radians);
+
+        return new Vector2(
+            vector.X * cos - vector.Y * sin,
+            vector.X * sin + vector.Y * cos);
     }
 
     public void SetPosition(Vector2 position) => _position = new(position.X * Tile.TILE_SIZE, position.Y * Tile.TILE_SIZE);

@@ -8,7 +8,7 @@ public sealed class Game : Core
 
     private readonly SceneManager _sceneManager;
 
-    public static Camera MainCamera;
+    public static Camera MainCamera { get; private set; }
 
     public Game() : base(GAME_TITLE, SCREEN_WIDTH, SCREEN_HEIGHT, false) => _sceneManager = new();
 

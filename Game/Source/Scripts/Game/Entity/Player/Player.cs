@@ -58,17 +58,19 @@ internal sealed class Player
 
         _shootTimer -= deltaTime;
         HandleInput.AttackUpdate();
+
+        HandleInput.CameraUpdate() ;
     }
 
     public void Draw(SpriteBatch spriteBatch, Layer layer)
     {
         //_inventory.Draw(spriteBatch);
-        _texture.Draw(spriteBatch, _movement.Position, Color.White, 0f, Vector2.One, SpriteEffects.None, layer.Depth);
+        _texture.Draw(spriteBatch, _movement.Position, Color.White, Game.MainCamera.SpriteRotate, Vector2.One, SpriteEffects.None, layer.Depth);
         
         //_healthBar.Draw(spriteBatch,Layer.GUILayer, _movement.Position,13,20,Color.Red, Color.Green);
 
-        Debug.DrawRectangleBorder(spriteBatch, _collider, Color.White, 1);
-        Debug.DrawRectangleBorder(spriteBatch, _hitbox, Color.Red, 1);
+        Debug.DrawRectangleBorder(spriteBatch, _collider, Debug.Collider, 1);
+        Debug.DrawRectangleBorder(spriteBatch, _hitbox, Debug.DynamicObject, 1);
         //_attack.Draw(spriteBatch);
     }
 }

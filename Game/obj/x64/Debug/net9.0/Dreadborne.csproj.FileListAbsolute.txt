@@ -46,3 +46,4 @@ C:\Users\User\source\repos\Dreadborne\bin\x64\Debug\net9.0\Source\Resources\Font
 C:\Users\User\source\repos\Dreadborne\bin\x64\Debug\net9.0\Source\Resources\Fonts\Default.xnb
 C:\Users\User\source\repos\Dreadborne\bin\x64\Debug\net9.0\Source\Resources\XMLs\icon-prefabs.xml
 C:\Users\User\source\repos\Dreadborne\bin\x64\Debug\net9.0\Source\Resources\XMLs\item-prefabs.xml
+C:\Users\User\source\repos\Dreadborne\bin\x64\Debug\net9.0\Source\Resources\3D\Model.xnb

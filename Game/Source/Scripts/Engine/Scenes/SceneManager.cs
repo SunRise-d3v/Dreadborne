@@ -4,10 +4,7 @@ internal sealed class SceneManager
 {
     private readonly Stack<IScene> _sceneStack;
 
-    public SceneManager()
-    {
-        _sceneStack = new();
-    }
+    public SceneManager() => _sceneStack = new();
 
     public void AddScene(IScene scene)
     {
@@ -15,13 +12,7 @@ internal sealed class SceneManager
         _sceneStack.Push(scene);
     }
 
-    public void RemoveScene()
-    {
-        _sceneStack.Pop();
-    }
+    public void RemoveScene() => _sceneStack.Pop();
 
-    public IScene GetCurrentScene()
-    {
-        return _sceneStack.Peek();
-    }
+    public IScene GetCurrentScene() => _sceneStack.Peek();
 }

@@ -22,7 +22,7 @@ internal sealed class DroppedLoot
         foreach (Item item in _droppedItems)
         {
             item.Draw(spriteBatch, Layer.ItemLayer);
-            Debug.DrawRectangleBorder(spriteBatch, _rectangle, Color.LawnGreen, 1);
+            Debug.DrawRectangleBorder(spriteBatch, _rectangle, Debug.InteractionObject, 1);
         }
     }
 
@@ -32,5 +32,11 @@ internal sealed class DroppedLoot
         item.SetPosition(enemy.Position);
         _rectangle = new((int)enemy.Position.X - item.Texture.Width / 2, (int)enemy.Position.Y - item.Texture.Height / 2,
             item.Texture.Width, item.Texture.Height);
+    }
+
+    public void Destroy()
+    {
+        _rectangle = Rectangle.Empty;
+        _droppedItems?.Clear();
     }
 }

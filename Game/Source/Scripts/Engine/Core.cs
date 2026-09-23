@@ -48,6 +48,8 @@ public class Core : Microsoft.Xna.Framework.Game
         Graphics.SynchronizeWithVerticalRetrace = vSync;
         //TargetElapsedTime = TimeSpan.FromTicks(TimeSpan.TicksPerSecond / _fpsCounter.FPS);
 
+        Window.AllowUserResizing = true;
+
         Graphics.ApplyChanges();
     }
 
@@ -80,6 +82,7 @@ public class Core : Microsoft.Xna.Framework.Game
         ImGui.GetStyle().ScaleAllSizes(1.05f);
 
         Debug.Init(GraphicsDevice);
+        Console.Write("\nGame started!\n");
     }
 
     protected override void Update(GameTime gameTime)

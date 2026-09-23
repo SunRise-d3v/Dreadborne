@@ -4,6 +4,7 @@
   <Platform>DesktopVK</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/User/source/repos/Dreadborne/Source/Resources/3D/Model.fbx</File>
     <File>C:/Users/User/source/repos/Dreadborne/Source/Resources/Fonts/Default.spritefont</File>
     <File>C:/Users/User/source/repos/Dreadborne/Source/Resources/Sprites/character.png</File>
     <File>C:/Users/User/source/repos/Dreadborne/Source/Resources/Sprites/feat.png</File>
@@ -14,6 +15,7 @@
     <File>C:/Users/User/source/repos/Dreadborne/Source/Resources/Sprites/wall.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -13,7 +13,7 @@ internal sealed class Inventory
     #region Const
     private const byte INVENTORY_CAPACITY_X = 10;
     private const byte INVENTORY_CAPACITY_Y = 7;
-    private const float OFFSET = 0.8f;
+    private const int OFFSET = 1;
     #endregion
 
     private readonly Slot[] _slots;
@@ -31,15 +31,15 @@ internal sealed class Inventory
 
         _slots = new Slot[INVENTORY_CAPACITY_X * INVENTORY_CAPACITY_Y];
 
-        float gridWidth = INVENTORY_CAPACITY_X * Slot.SLOT_SIZE + (INVENTORY_CAPACITY_X - 1) * OFFSET;
-        float gridHeight = INVENTORY_CAPACITY_Y * Slot.SLOT_SIZE + (INVENTORY_CAPACITY_Y - 1) * OFFSET;
+        int gridWidth = INVENTORY_CAPACITY_X * Slot.SLOT_SIZE + (INVENTORY_CAPACITY_X - 1) * OFFSET;
+        int gridHeight = INVENTORY_CAPACITY_Y * Slot.SLOT_SIZE + (INVENTORY_CAPACITY_Y - 1) * OFFSET;
 
-        float panelWidth = gridWidth + PADDING * 2;
-        float panelHeight = gridHeight + PADDING * 2 + TITLE_HEIGHT;
+        int panelWidth = gridWidth + PADDING * 2;
+        int panelHeight = gridHeight + PADDING * 2 + TITLE_HEIGHT;
 
         _backgroundCanvas = new(
-            (int)(Game.SCREEN_WIDTH - panelWidth) / 2, (int)(Game.SCREEN_HEIGHT - panelHeight) / 2,
-            (int)panelWidth, (int)panelHeight);
+            (Game.SCREEN_WIDTH - panelWidth) / 2, (Game.SCREEN_HEIGHT - panelHeight) / 2,
+           panelWidth, panelHeight);
 
         for (int indexY = 0; indexY < INVENTORY_CAPACITY_Y; indexY++)
             for (int indexX = 0; indexX < INVENTORY_CAPACITY_X; indexX++)
@@ -52,8 +52,8 @@ internal sealed class Inventory
             }
 
         _dragNDropField = new(
-            (int)(Game.SCREEN_WIDTH - panelWidth) / 2, (int)(Game.SCREEN_HEIGHT - panelHeight) / 2,
-            (int)panelWidth, TITLE_HEIGHT);
+            (Game.SCREEN_WIDTH - panelWidth) / 2, (Game.SCREEN_HEIGHT - panelHeight) / 2,
+            panelWidth, TITLE_HEIGHT);
 
         IsOpen = false;
     }
@@ -78,7 +78,7 @@ internal sealed class Inventory
                 slot.Draw(spriteBatch, Layer.UILayer);
         }
 
-        Debug.DrawRectangleBorder(spriteBatch, _dragNDropField, Color.Green, 1);
+        Debug.DrawRectangleBorder(spriteBatch, _dragNDropField, Debug.InteractionObject, 1);
     }
 
     #region Inventory Logic

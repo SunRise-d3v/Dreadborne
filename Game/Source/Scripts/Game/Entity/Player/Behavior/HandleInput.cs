@@ -2,17 +2,22 @@
 
 internal static class HandleInput
 {
-    public static void MoveUpdate()
-    {
-        if (Key.IsKeyDown("Move_Left"))
-            Player.Instance.Movement._direction.X -= 1;
-        if (Key.IsKeyDown("Move_Right"))
-            Player.Instance.Movement._direction.X += 1;
+    private static float CameraRotation = 0.05f;
 
-        if (Key.IsKeyDown("Move_Up"))
-            Player.Instance.Movement._direction.Y -= 1;
-        if (Key.IsKeyDown("Move_Down"))
-            Player.Instance.Movement._direction.Y += 1;
+    public static Vector2 GetMoveInput()
+    {
+        Vector2 direction = Vector2.Zero;
+
+        if (Input.Keyboard.IsKeyDown(Keys.A) || Input.Keyboard.IsKeyDown(Keys.Left))
+            direction.X -= 1;
+        if (Input.Keyboard.IsKeyDown(Keys.D) || Input.Keyboard.IsKeyDown(Keys.Right))
+            direction.X += 1;
+        if (Input.Keyboard.IsKeyDown(Keys.W) || Input.Keyboard.IsKeyDown(Keys.Up))
+            direction.Y -= 1;
+        if (Input.Keyboard.IsKeyDown(Keys.S) || Input.Keyboard.IsKeyDown(Keys.Down))
+            direction.Y += 1;
+
+        return direction;
     }
 
     public static void AttackUpdate()
@@ -34,5 +39,20 @@ internal static class HandleInput
         {
             Player.Instance.Inventory._position = Input.Mouse.Position.ToVector2();
         }*/
+
+        if (Input.Keyboard.IsKeyJustPressed(Keys.Z))
+            Player.Instance.Inventory.AddItem(new Item("iron-shortsword", 1));
+
+        if (Input.Keyboard.IsKeyJustPressed(Keys.X))
+            Player.Instance.Inventory.RemoveItem("iron-shortsword", 1);
+    }
+
+    public static void CameraUpdate()
+    {
+        if (Input.Keyboard.IsKeyDown(Keys.Q))
+            Game.MainCamera.Rotate(CameraRotation);
+
+        if (Input.Keyboard.IsKeyDown(Keys.E))
+            Game.MainCamera.Rotate(-CameraRotation);
     }
 }
