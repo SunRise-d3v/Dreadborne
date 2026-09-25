@@ -33,4 +33,7 @@
 	<ItemGroup>
 		<MonoGameContentReference Include="Source\Loader.mgcb" />
 	</ItemGroup>
+	<PropertyGroup>
+		<InvariantGlobalization>false</InvariantGlobalization>
+	</PropertyGroup>
 </Project>

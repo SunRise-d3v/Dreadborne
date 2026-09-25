@@ -39,8 +39,10 @@ public class Application : Game
     private Texture2D _background;
     private Rectangle _sourceRectangle;
 
-    RenderTarget2D sceneRT, rtA, rtB;
-    Effect blur;
+    private RenderTarget2D _renderTarget, _RTHorizontal, _RTVertical;
+    private Effect _blur;
+
+    private Texture2D _pixel;
 
     public Application()
     {
@@ -89,21 +91,18 @@ public class Application : Game
         _button = new(Content, "textures/button", new(100, 100));
         _background = Content.Load<Texture2D>("textures/background");
 
-        string dir = System.IO.Path.Combine(AppContext.BaseDirectory, "Source", "Resources", "Shaders");
-        System.Diagnostics.Debug.WriteLine("dir exists: " + System.IO.Directory.Exists(dir));
-        if (System.IO.Directory.Exists(dir))
-            foreach (var f in System.IO.Directory.GetFiles(dir))
-                System.Diagnostics.Debug.WriteLine(f);
-
-        blur = Content.Load<Effect>("shaders/blur");
+        _blur = Content.Load<Effect>("shaders/blur");
 
         var pp = GraphicsDevice.PresentationParameters;
         int w = pp.BackBufferWidth, h = pp.BackBufferHeight;
 
-        sceneRT = new RenderTarget2D(GraphicsDevice, w, h);
-        // Половинный размер: быстрее и размытие сильнее
-        rtA = new RenderTarget2D(GraphicsDevice, w / 2, h / 2);
-        rtB = new RenderTarget2D(GraphicsDevice, w / 2, h / 2);
+        _renderTarget = new RenderTarget2D(GraphicsDevice, w, h);
+
+        _RTHorizontal = new RenderTarget2D(GraphicsDevice, w / 2, h / 2);
+        _RTVertical = new RenderTarget2D(GraphicsDevice, w / 2, h / 2);
+
+        _pixel = new(GraphicsDevice, 1, 1);
+        _pixel.SetData([Color.White]);
     }
 
     protected override void Update(GameTime gameTime)
@@ -119,50 +118,60 @@ public class Application : Game
         base.Update(gameTime);
     }
 
+    #region Application Render
     protected override void Draw(GameTime gameTime)
     {
-        float strength = 0.7f;
+        // TODO: Add your drawing code here
+        float strength = 0.725f;
 
         GraphicsDevice.Clear(Color.Black);
 
-        GraphicsDevice.SetRenderTarget(sceneRT);
+        GraphicsDevice.SetRenderTarget(_renderTarget);
         _spriteBatch.Begin();
 
         _spriteBatch.Draw(_background, new Vector2(_sourceRectangle.Width + 19, _sourceRectangle.Height - 15) * 0.5f, _sourceRectangle, Color.White, 0f, new Vector2(_sourceRectangle.Width, _sourceRectangle.Height) * 0.5f, 1.15f, SpriteEffects.None, 0.1f);
 
         _spriteBatch.End();
 
-        GraphicsDevice.SetRenderTarget(rtA);
-        blur.Parameters["Direction"].SetValue(new Vector2(1f / sceneRT.Width, 0));
-        blur.Parameters["Weights"].SetValue(new float[] { 0.2270270270f, 0.3162162162f, 0.0702702703f });
-        blur.Parameters["Offsets"].SetValue(new float[] { 0f, 1.3846153846f * strength, 3.2307692308f * strength });
-        
-        _spriteBatch.Begin(effect: blur, samplerState: SamplerState.LinearClamp);
-        _spriteBatch.Draw(sceneRT, rtA.Bounds, Color.White);
+        GraphicsDevice.SetRenderTarget(_RTHorizontal);
+        _blur.Parameters["Direction"].SetValue(new Vector2(1f / _renderTarget.Width, 0));
+        _blur.Parameters["Weights"].SetValue(new float[] { 0.2270270270f, 0.3162162162f, 0.0702702703f });
+        _blur.Parameters["Offsets"].SetValue(new float[] { 0f, 1.3846153846f * strength, 3.2307692308f * strength });
+
+        _spriteBatch.Begin(effect: _blur, samplerState: SamplerState.LinearClamp);
+        _spriteBatch.Draw(_renderTarget, _RTHorizontal.Bounds, Color.White);
         _spriteBatch.End();
 
-        // 3. Вертикальный проход
-        GraphicsDevice.SetRenderTarget(rtB);
-        blur.Parameters["Direction"].SetValue(new Vector2(0, 1f / rtA.Height));
-        blur.Parameters["Weights"].SetValue(new float[] { 0.2270270270f, 0.3162162162f, 0.0702702703f });
-        blur.Parameters["Offsets"].SetValue(new float[] { 0f, 1.3846153846f * strength, 3.2307692308f * strength });
-        
-        _spriteBatch.Begin(effect: blur, samplerState: SamplerState.LinearClamp);
-        _spriteBatch.Draw(rtA, rtB.Bounds, Color.White);
+        GraphicsDevice.SetRenderTarget(_RTVertical);
+        _blur.Parameters["Direction"].SetValue(new Vector2(0, 1f / _RTHorizontal.Height));
+        _blur.Parameters["Weights"].SetValue(new float[] { 0.2270270270f, 0.3162162162f, 0.0702702703f });
+        _blur.Parameters["Offsets"].SetValue(new float[] { 0f, 1.3846153846f * strength, 3.2307692308f * strength });
+
+        _spriteBatch.Begin(effect: _blur, samplerState: SamplerState.LinearClamp);
+        _spriteBatch.Draw(_RTHorizontal, _RTVertical.Bounds, Color.White);
         _spriteBatch.End();
 
-        // 4. Выводим на экран
         GraphicsDevice.SetRenderTarget(null);
-        
-        _spriteBatch.Begin(SpriteSortMode.FrontToBack,samplerState: SamplerState.PointClamp);
-        _button.Draw(_spriteBatch);
-        _spriteBatch.Draw(rtB, GraphicsDevice.Viewport.Bounds, Color.White);
+
+        _spriteBatch.Begin(SpriteSortMode.FrontToBack, samplerState: SamplerState.PointClamp);
+        _spriteBatch.Draw(_RTVertical, GraphicsDevice.Viewport.Bounds, Color.White);
+        _spriteBatch.Draw(_pixel, new Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), new Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), Color.Black * 0.7f, 0f, Vector2.Zero, SpriteEffects.None, 0.02f);
+
+        DrawUI();
+
         _spriteBatch.End();
 
-        // TODO: Add your drawing code here
         base.Draw(gameTime);
     }
 
+    private void DrawUI()
+    {
+        //_spriteBatch.Draw();
+        _button.Draw(_spriteBatch, 0.03f, Color.ForestGreen, Color.White);
+    }
+    #endregion
+
+    #region Application Logic
     private void Download()
     {
         Directory.CreateDirectory(Path.GetFullPath(_path));
@@ -283,4 +292,5 @@ public class Application : Game
         Process.Start(_path + _exeName);
         Exit();
     }
+    #endregion
 }
