@@ -2,9 +2,10 @@
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
-using System.Net;
-using System.Resources;
-using System.Text;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text.Json;
+using System.Threading.Tasks;
 
 using Microsoft.Win32;
 
@@ -24,17 +25,19 @@ public class Application : Game
     private string _path;
     private string _exeName;
     private string _url;
+    private string _downloadUrl;
 
     private bool _dowloading;
 
     private Button _button;
+    private MouseState _previousMouseState;
 
     public static SpriteFont Font;
 
     public const ushort SCREEN_WIDTH = 800;
     public const ushort SCREEN_HEIGHT = 600;
 
-    private const byte FPS = 45;
+    private const byte FPS = 60;
 
     private Texture2D _background;
     private Rectangle _sourceRectangle;
@@ -44,11 +47,19 @@ public class Application : Game
 
     private Texture2D _pixel;
 
+    private static readonly HttpClient _httpClient = new();
+
+    static Application()
+    {
+        _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("DreadborneLauncher/1.0");
+        _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github+json"));
+    }
+
     public Application()
     {
         Content.RootDirectory = "source/resources";
 
-        Window.Title = "Dreadborne Launcher | " + "0.0.1a";
+        Window.Title = "Dreadborne Launcher | " + _version;
         _graphics = new(this)
         {
             PreferredBackBufferWidth = SCREEN_WIDTH,
@@ -67,9 +78,6 @@ public class Application : Game
 
     protected override void Initialize()
     {
-        base.Initialize();
-
-        // TODO: Add your initialization logic here
         _version = "";
         _serverVersion = "";
         _path = @"Game\";
@@ -79,41 +87,58 @@ public class Application : Game
         _dowloading = false;
 
         _sourceRectangle = new(0, 0, 734, 600);
+
+        base.Initialize();
     }
 
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-        // TODO: use this.Content to load your game content here
         Font = Content.Load<SpriteFont>("fonts/default");
 
-        _button = new(Content, "textures/button", new(100, 100));
+        _button = new(Content, "textures/button", new Vector2(SCREEN_WIDTH, SCREEN_HEIGHT) * 0.5f)
+        {
+            Text = "Checking...",
+            Enable = false
+        };
+
         _background = Content.Load<Texture2D>("textures/background");
 
         _blur = Content.Load<Effect>("shaders/blur");
 
-        var pp = GraphicsDevice.PresentationParameters;
-        int w = pp.BackBufferWidth, h = pp.BackBufferHeight;
+        PresentationParameters parameters = GraphicsDevice.PresentationParameters;
+        int width = parameters.BackBufferWidth, height = parameters.BackBufferHeight;
 
-        _renderTarget = new RenderTarget2D(GraphicsDevice, w, h);
+        _renderTarget = new RenderTarget2D(GraphicsDevice, width, height);
 
-        _RTHorizontal = new RenderTarget2D(GraphicsDevice, w / 2, h / 2);
-        _RTVertical = new RenderTarget2D(GraphicsDevice, w / 2, h / 2);
+        _RTHorizontal = new RenderTarget2D(GraphicsDevice, width / 2, height / 2);
+        _RTVertical = new RenderTarget2D(GraphicsDevice, width / 2, height / 2);
 
         _pixel = new(GraphicsDevice, 1, 1);
         _pixel.SetData([Color.White]);
+
+        _ = CheckForUpdatesAsync();
     }
 
     protected override void Update(GameTime gameTime)
     {
         KeyboardState keyboard = Keyboard.GetState();
+        MouseState mouse = Mouse.GetState();
 
         if (keyboard.IsKeyDown(Keys.Escape))
             Exit();
 
-        // TODO: Add your update logic here
+        bool clicked = mouse.LeftButton == ButtonState.Released
+            && _previousMouseState.LeftButton == ButtonState.Pressed
+            && _button is not null
+            && _button.Enable
+            && _button.Contains(mouse.Position);
 
+        if (clicked)
+            _button.OnClick();
+
+        _previousMouseState = mouse;
 
         base.Update(gameTime);
     }
@@ -121,7 +146,6 @@ public class Application : Game
     #region Application Render
     protected override void Draw(GameTime gameTime)
     {
-        // TODO: Add your drawing code here
         float strength = 0.725f;
 
         GraphicsDevice.Clear(Color.Black);
@@ -135,8 +159,8 @@ public class Application : Game
 
         GraphicsDevice.SetRenderTarget(_RTHorizontal);
         _blur.Parameters["Direction"].SetValue(new Vector2(1f / _renderTarget.Width, 0));
-        _blur.Parameters["Weights"].SetValue(new float[] { 0.2270270270f, 0.3162162162f, 0.0702702703f });
-        _blur.Parameters["Offsets"].SetValue(new float[] { 0f, 1.3846153846f * strength, 3.2307692308f * strength });
+        _blur.Parameters["Weights"].SetValue([0.2270270270f, 0.3162162162f, 0.0702702703f]);
+        _blur.Parameters["Offsets"].SetValue([0f, 1.3846153846f * strength, 3.2307692308f * strength]);
 
         _spriteBatch.Begin(effect: _blur, samplerState: SamplerState.LinearClamp);
         _spriteBatch.Draw(_renderTarget, _RTHorizontal.Bounds, Color.White);
@@ -144,8 +168,8 @@ public class Application : Game
 
         GraphicsDevice.SetRenderTarget(_RTVertical);
         _blur.Parameters["Direction"].SetValue(new Vector2(0, 1f / _RTHorizontal.Height));
-        _blur.Parameters["Weights"].SetValue(new float[] { 0.2270270270f, 0.3162162162f, 0.0702702703f });
-        _blur.Parameters["Offsets"].SetValue(new float[] { 0f, 1.3846153846f * strength, 3.2307692308f * strength });
+        _blur.Parameters["Weights"].SetValue([0.2270270270f, 0.3162162162f, 0.0702702703f]);
+        _blur.Parameters["Offsets"].SetValue([0f, 1.3846153846f * strength, 3.2307692308f * strength]);
 
         _spriteBatch.Begin(effect: _blur, samplerState: SamplerState.LinearClamp);
         _spriteBatch.Draw(_RTHorizontal, _RTVertical.Bounds, Color.White);
@@ -166,130 +190,193 @@ public class Application : Game
 
     private void DrawUI()
     {
-        //_spriteBatch.Draw();
-        _button.Draw(_spriteBatch, 0.03f, Color.ForestGreen, Color.White);
+        _button.Draw(_spriteBatch, 0.03f, Color.White, Color.White);
     }
     #endregion
 
     #region Application Logic
-    private void Download()
+    private async Task CheckForUpdatesAsync()
     {
-        Directory.CreateDirectory(Path.GetFullPath(_path));
-        if (!File.Exists(Path.GetFullPath(_path + _exeName)))
+        try
         {
-            RegistryKey key = Registry.CurrentUser.CreateSubKey("Dreadborne");
-            key.SetValue("Version", "none");
-            key.Close();
+            _version = GetLocalVersion();
 
-            _version = "none";
-        }
-        else
-        {
-            _version = (string)Registry.CurrentUser.OpenSubKey("Dreadborne").GetValue("Version");
-        }
+            (string latestVersion, string downloadUrl) = await GetLatestReleaseAsync();
+            _serverVersion = latestVersion;
+            _downloadUrl = downloadUrl;
 
-        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(_url + "file");
-        HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Window.Title = $"Dreadborne Launcher | {_version}/{_serverVersion}";
 
-        if (response.StatusCode == HttpStatusCode.OK)
-        {
-            Stream reciveSteam = response.GetResponseStream();
-            StreamReader readerStream = null;
+            bool installed = File.Exists(Path.GetFullPath(_path + _exeName));
 
-            if (response.CharacterSet == null)
+            if (_version != _serverVersion)
             {
-                readerStream = new(reciveSteam);
+                _button.Text = installed ? "Update" : "Download";
+                _button.Click = UpdateGame;
             }
             else
             {
-                readerStream = new(reciveSteam, Encoding.GetEncoding(response.CharacterSet));
-            }
-
-            string data = readerStream.ReadToEnd();
-            _serverVersion = data;
-
-            response.Close();
-            readerStream.Close();
-        }
-        else
-        {
-            MessageBox.Show("Error", "An error occurred while uploading the file.", ["OK"]);
-        }
-
-        Window.Title = _version + '/' + _serverVersion;
-
-        if (_version != _serverVersion)
-        {
-            if (File.Exists(Path.GetFullPath(_path + _exeName)))
-            {
-                //Button.text = "Update
-                //Button.Click += UpdateGame
-            }
-            else
-            {
-                //Button.text = "Download
-                //Button.Click += UpdateGame
+                _button.Text = "Play";
+                _button.Click = Play;
             }
         }
-        else
+        catch (Exception ex)
         {
-            //Button.text = "Play/Launch/Start
-            //Button.Click += Play
+            _button.Text = "Retry";
+            _button.Click = () => _ = CheckForUpdatesAsync();
+            MessageBox.Show("Error", "Failed to check for updates: " + ex.Message, ["OK"]);
+        }
+        finally
+        {
+            _button.Enable = true;
         }
     }
 
-    private void UpdateGame()
+    private static string GetLocalVersion()
     {
-        _dowloading = false;
-        //Button.Enable = false
+        using RegistryKey key = Registry.CurrentUser.CreateSubKey("Dreadborne");
 
-        DirectoryInfo directory = new(Path.GetFullPath(_path));
-        foreach (FileInfo item in directory.GetFiles())
+        if (key.GetValue("Version") is not string version)
         {
-            item.Delete();
+            version = "none";
+            key.SetValue("Version", version);
         }
 
-        foreach (DirectoryInfo item in directory.GetDirectories())
-        {
-            item.Delete(true);
-        }
+        return version;
+    }
 
-        using (WebClient client = new())
+    private string GetReleasesApiUrl()
+    {
+        string repoPath = _url
+            .Replace("https://github.com/", string.Empty)
+            .Replace("http://github.com/", string.Empty)
+            .Trim('/');
+
+        return $"https://api.github.com/repos/{repoPath}/releases";
+    }
+
+    private async Task<(string version, string downloadUrl)> GetLatestReleaseAsync()
+    {
+        using HttpResponseMessage response = await _httpClient.GetAsync(GetReleasesApiUrl());
+        response.EnsureSuccessStatusCode();
+
+        await using Stream stream = await response.Content.ReadAsStreamAsync();
+        using JsonDocument document = await JsonDocument.ParseAsync(stream);
+
+        JsonElement releases = document.RootElement;
+        if (releases.GetArrayLength() == 0)
+            throw new InvalidOperationException("The repository has no published releases yet.");
+
+        JsonElement latest = releases[0];
+        string tagName = latest.GetProperty("tag_name").GetString();
+
+        string assetUrl = null;
+        foreach (JsonElement asset in latest.GetProperty("assets").EnumerateArray())
         {
-            client.DownloadProgressChanged += (s, g) =>
+            string name = asset.GetProperty("name").GetString();
+            if (name is not null && name.EndsWith(".zip", StringComparison.OrdinalIgnoreCase))
             {
-                if (g.ProgressPercentage == 100)
-                {
-                    if (!File.Exists(Path.GetFullPath(_path + _exeName)))
-                    {
-                        ZipFile.ExtractToDirectory("Game.zip", _path);
-
-                        RegistryKey key = Registry.CurrentUser.CreateSubKey("Dreadborne");
-                        key.SetValue("Version", _serverVersion);
-                        key.Close();
-
-                        _version = _serverVersion;
-
-                        Window.Title = _version + '/' + _serverVersion;
-
-                        //Button.text = "Play"
-                        //Button.Click -= UpdateGame
-                        //Button.Click -= Play
-                    }
-
-                    //Button.Enable = true
-                    _dowloading = false;
-                }
-            };
-
-            client.DownloadFileAsync(new Uri(_url + "Dreadborne.zip"), "Game.zip");
+                assetUrl = asset.GetProperty("browser_download_url").GetString();
+                break;
+            }
         }
-        ;
+
+        if (assetUrl is null)
+            throw new InvalidOperationException("The latest GitHub release has no .zip asset attached.");
+
+        return (tagName, assetUrl);
+    }
+
+    private async void UpdateGame()
+    {
+        if (_dowloading)
+            return;
+
+        _dowloading = true;
+        _button.Enable = false;
+        _button.Text = "Downloading... 0%";
+
+        string zipPath = Path.Combine(Path.GetTempPath(), "Dreadborne.zip");
+
+        try
+        {
+            string fullPath = Path.GetFullPath(_path);
+            Directory.CreateDirectory(fullPath);
+
+            DirectoryInfo directory = new(fullPath);
+            foreach (FileInfo item in directory.GetFiles())
+                item.Delete();
+            foreach (DirectoryInfo item in directory.GetDirectories())
+                item.Delete(true);
+
+            using (HttpResponseMessage response = await _httpClient.GetAsync(_downloadUrl, HttpCompletionOption.ResponseHeadersRead))
+            {
+                response.EnsureSuccessStatusCode();
+
+                long? totalBytes = response.Content.Headers.ContentLength;
+
+                await using Stream contentStream = await response.Content.ReadAsStreamAsync();
+                await using FileStream fileStream = new(zipPath, FileMode.Create, FileAccess.Write, FileShare.None);
+
+                byte[] buffer = new byte[81920];
+                long totalRead = 0;
+                int bytesRead;
+
+                while ((bytesRead = await contentStream.ReadAsync(buffer)) > 0)
+                {
+                    await fileStream.WriteAsync(buffer.AsMemory(0, bytesRead));
+                    totalRead += bytesRead;
+
+                    if (totalBytes.HasValue && totalBytes.Value > 0)
+                    {
+                        int percent = (int)(totalRead * 100 / totalBytes.Value);
+                        _button.Text = $"Downloading... {percent}%";
+                    }
+                }
+            }
+
+            ZipFile.ExtractToDirectory(zipPath, fullPath, overwriteFiles: true);
+
+            using (RegistryKey key = Registry.CurrentUser.CreateSubKey("Dreadborne"))
+            {
+                key.SetValue("Version", _serverVersion);
+            }
+
+            _version = _serverVersion;
+            Window.Title = $"Dreadborne Launcher | {_version}/{_serverVersion}";
+
+            _button.Text = "Play";
+            _button.Click = Play;
+        }
+        catch (Exception ex)
+        {
+            _button.Text = "Retry";
+            _button.Click = UpdateGame;
+            MessageBox.Show("Error", "Failed to download the update: " + ex.Message, ["OK"]);
+        }
+        finally
+        {
+            if (File.Exists(zipPath))
+            {
+                try { File.Delete(zipPath); } catch { /* best effort cleanup */ }
+            }
+
+            _dowloading = false;
+            _button.Enable = true;
+        }
     }
 
     private void Play()
     {
-        Process.Start(_path + _exeName);
+        string exePath = Path.GetFullPath(Path.Combine(_path, _exeName));
+
+        ProcessStartInfo startInfo = new(exePath)
+        {
+            WorkingDirectory = Path.GetFullPath(_path),
+            UseShellExecute = true
+        };
+
+        Process.Start(startInfo);
         Exit();
     }
     #endregion

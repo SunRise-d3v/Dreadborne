@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <TargetFramework>net9.0</TargetFramework>
     <RollForward>Major</RollForward>
     <PublishReadyToRun>false</PublishReadyToRun>
@@ -29,5 +29,8 @@
     <PackageReference Include="MonoGame.Runtime.Mac.Vulkan" Version="3.8.5.1" />
     <PackageReference Include="MonoGame.Runtime.Linux.Vulkan" Version="3.8.5.1" />
     <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AEngine\AEngine.csproj" />
   </ItemGroup>
 </Project>
